@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/sativa.png);
+    font-family: "john-doe", "sans-serif";
+    color: #3C7F5D;
+}
+
+header {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#score {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 65px;
+    background-color: #FFF;
+    border: 3px solid #5FCC94;
+    color: #333;
+    border-radius: 10px;
+
+}
+
+#shuttle {
+    position: relative;
+}
+
+.letter {
+    font-size: 36pt;
+    float: left;
+    width: 100px;
+}

@@ -21,8 +21,8 @@ Model = {
         var result;
         if (Model.manifest[character]) {
             result = Model.manifest[character].shift();
-            Model.score++;
             Model.manifest[character].length == 0 && delete Model.manifest[character];
+            Model.score++;
         }
         else {
             result = false;

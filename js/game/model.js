@@ -8,9 +8,9 @@ Model = {
         Model.updateTime = 1000;
     },
 
-    addLetter: function (letter) {
+    addLetter: function (character) {
         Model.letterID++;
-        Model.manifest[letter] ? Model.manifest[letter].push(Model.letterID) : Model.manifest[letter] = [Model.letterID];
+        Model.manifest[character] ? Model.manifest[character].push(Model.letterID) : Model.manifest[character] = [Model.letterID];
     },
 
     accelerate: function () {

@@ -9,7 +9,7 @@ Controller = {
     evaluateUserInput: function (character) {
         var characterID = Model.getIdForCharacter(character)
         if (characterID) {
-            View.remove('#letter_' + characterID);
+            View.remove(characterID);
             if (Model.doIncreaseDifficulty()) {
                 Controller.resetIntervals();
             }
@@ -17,9 +17,9 @@ Controller = {
         View.setScore(Model.score);
     },
 
-    addLetter: function (letter) {
-        Model.addLetter(letter);
-        View.addLetter(letter, Model.letterID);
+    addLetter: function (character) {
+        Model.addLetter(character);
+        View.addLetter(character, Model.letterID);
     },
 
     update: function () {

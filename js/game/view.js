@@ -7,13 +7,13 @@ View = {
         View.setScore(0);
     },
 
-    addLetter: function (letter, letterID) {
-        View.shuttleElement.prepend("<div class = letter id = letter_" + letterID + ">" + letter + "</div>");
+    addLetter: function (character, characterID) {
+        View.shuttleElement.prepend("<div class = letter id = character_" + characterID + ">" + character + "</div>");
         View.shuttleElement.css({left: '0px'});
     },
 
-    remove: function (selectedElement) {
-        $(selectedElement).remove();
+    remove: function (characterID) {
+        $('#character_' + characterID).remove();
     },
 
     animate: function () {
@@ -32,9 +32,9 @@ View = {
 
     end: function () {
         View.shuttleElement.empty();
-        var letters = ['r', 'e', 'v', 'o', ' ', 'e', 'm', 'a', 'g', ' '];
-        for (var i = 0; i < letters.length; i++) {
-            View.shuttleElement.prepend("<div class = 'letter'>" + letters[i] + "</div>");
+        var gameOverCharacters = ['r', 'e', 'v', 'o', ' ', 'e', 'm', 'a', 'g', ' '];
+        for (var i = 0; i < gameOverCharacters.length; i++) {
+            View.shuttleElement.prepend("<div class = 'letter'>" + gameOverCharacters[i] + "</div>");
         }
         View.shuttleElement.css({left: '100px'});
     }

@@ -11,5 +11,6 @@
 }
 
 #shuttle {
-    background-color: #00FF00;
+    position: relative;
+    letter-spacing: 100px;
 }

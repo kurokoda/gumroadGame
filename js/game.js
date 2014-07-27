@@ -1,19 +1,18 @@
 Game = {
     alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-    manifest: {},
-    letterID: 0,
-    score: 0,
-    updateTime: 1000,
     accelerateTrigger: 20,
-    moveInterval: undefined,
-    updateInterval: undefined,
-    shuttleElement: undefined,
-    scoreElement: undefined,
+
 
     start: function () {
+        Game.manifest= {};
         Game.shuttleElement = $('#shuttle');
         Game.scoreElement = $('#score');
-        this.setIntervals();
+        Game.shuttleElement.empty();
+        Game.score = 0;
+        Game.letterID = 0;
+        Game.updateTime = 1000;
+        Game.clearIntervals();
+        Game.setIntervals();
     },
 
     update: function () {

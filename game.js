@@ -2,35 +2,45 @@ Game = {
     moveInterval: undefined,
     updateInterval: undefined,
     alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-    activeLetters: "",
+    manifest: {},
+    letterID: 0,
+    shuttle: undefined,
+
 
     start: function () {
-        Game.activeLetters = "";
+        Game.shuttle = $('#shuttle')
         Game.moveInterval = setInterval(Game.moveLetters, 100);
         Game.updateInterval = setInterval(Game.update, 1000);
     },
 
     update: function () {
-        Game.activeLetters = Game.getRandomLetter() + Game.activeLetters;
-        $('#shuttle').text(Game.activeLetters);
-        $('#shuttle').css({left: '0px'});
-        if (Game.activeLetters.length == 10) {
+        if (Game.shuttle[0].childElementCount == 10) {
             Game.end();
+            return;
         }
+        Game.addLetter();
     },
 
     moveLetters: function () {
-        $('#shuttle').css({
+        Game.shuttle.css({
             'left': '+=10px'
         });
     },
 
-    evaluateUserInput: function (keyCode) {
-
+    evaluateUserInput: function (character) {
+        if (Game.manifest[character]) {
+            var elementToRemoveID = '#letter_' + Game.manifest[character].shift();
+            $(elementToRemoveID).remove();
+            console.log(elementToRemoveID);
+        }
     },
 
-    getRandomLetter: function () {
-        return Game.alphabet[Math.floor(Math.random() * Game.alphabet.length)];
+    addLetter: function () {
+        var letter =  Game.alphabet[Math.floor(Math.random() * Game.alphabet.length)];
+        Game.letterID++;
+        Game.manifest[letter] ? Game.manifest[letter].push(Game.letterID) : Game.manifest[letter] = [Game.letterID];
+        Game.shuttle.prepend("<div class = letter id = letter_" + Game.letterID + ">" + letter + "</div>");
+        Game.shuttle.css({left: '0px'});
     },
 
     end: function () {

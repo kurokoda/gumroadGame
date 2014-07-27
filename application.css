@@ -12,5 +12,10 @@
 
 #shuttle {
     position: relative;
-    letter-spacing: 100px;
+}
+
+.letter {
+    font-size: 36pt;
+    float: left;
+    width: 100px;
 }

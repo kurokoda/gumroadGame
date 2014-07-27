@@ -1,13 +1,13 @@
 $(document).ready(function () {
-    Game.start();
+    Controller.start();
 });
 
 $(document).keyup(function (e) {
     if (e.keyCode == 27)
     {
-        Game.start();
+        Controller.start();
     }
-    Game.evaluateUserInput(String.fromCharCode(event.keyCode).toLowerCase());
+    Controller.evaluateUserInput(String.fromCharCode(event.keyCode).toLowerCase());
 });
 
 

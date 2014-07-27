@@ -1,24 +1,16 @@
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var activeLetters = "";
+
 var moveInterval = undefined;
 var updateInterval = undefined;
 
 $(document).ready(function () {
-    moveInterval = setInterval(moveLetters, 100);
-    updateInterval = setInterval(updateLetters, 1000);
+    moveInterval = setInterval(Game.moveLetters, 100);
+    updateInterval = setInterval(Game.updateLetters, 1000);
 });
 
 $(document).keydown(function (e) {
-    evaluateUserInput(e.keyCode);
+    Game.evaluateUserInput(e.keyCode);
 });
 
 
-function updateLetters(){
-
-}
-
-function moveLetters(){
-
-}
-
-function moveLetters(){
-
-}

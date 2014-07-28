@@ -1,7 +1,7 @@
 Model = {
     init: function () {
         Model.alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        Model.accelerateTrigger = 20,
+        Model.accelerateTrigger = 20;
         Model.manifest = {};
         Model.score = 0;
         Model.letterID = 0;
